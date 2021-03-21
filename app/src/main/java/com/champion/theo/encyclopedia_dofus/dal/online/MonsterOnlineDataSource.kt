@@ -74,6 +74,6 @@ class MonsterOnlineDataSource {
         return _data
     }
     companion object {
-        private const val apiUrl = "https://api.dofus.championtheo.fr/api/monsters"
+        private const val apiUrl = "https://api.dofus.championtheo.fr/api/"
     }
 }

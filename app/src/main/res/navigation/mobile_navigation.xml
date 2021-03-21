@@ -12,9 +12,9 @@
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/navigation_dashboard"
-        android:name="com.champion.theo.encyclopedia_dofus.ui.dashboard.DashboardFragment"
-        android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_dashboard" />
+        android:id="@+id/navigation_archmonster"
+        android:name="com.champion.theo.encyclopedia_dofus.ui.archMonster.ArchMonsterFragment"
+        android:label="@string/archmonster"
+        tools:layout="@layout/fragment_archMonster" />
 
 </navigation>

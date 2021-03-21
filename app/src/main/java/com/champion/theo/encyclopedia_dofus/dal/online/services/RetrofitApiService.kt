@@ -6,7 +6,7 @@ import retrofit2.http.GET
 import retrofit2.http.Query
 
 interface RetrofitApiService {
-    @GET("")
+    @GET("monsters")
     fun getMonsters(@Query("type") type: String): Call<MonsterResponse>
 
 
