@@ -10,11 +10,10 @@ class MonsterRepository {
         return dataSource.getMonsters(type)
     }
 
-
     companion object {
         private var instance: MonsterRepository? = null
         fun getInstance(): MonsterRepository {
-            if (instance == null){
+            if (instance == null) {
                 instance = MonsterRepository()
             }
             return instance!!

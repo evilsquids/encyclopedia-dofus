@@ -3,6 +3,14 @@
 <!-- CLASSES -->
     <color name="class_1_500">#FFE2AF5B</color>
     <color name="class_1_700">#FFAA8447</color>
+    <color name="class_2_500">#FF86C0CA</color>
+    <color name="class_2_700">#FF267583</color>
+    <color name="class_3_500">#FFEEBF4A</color>
+    <color name="class_3_700">#FFBD9940</color>
+    <color name="class_4_500">#FF9C2BA8</color>
+    <color name="class_4_700">#FF6C1D75</color>
+    <color name="class_5_500">#FF606CDC</color>
+    <color name="class_5_700">#FF3E4792</color>
 
 <!-- CUSTOM -->
 
