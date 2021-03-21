@@ -3,18 +3,18 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/navigation_home">
+    app:startDestination="@+id/navigation_encyclopedia">
 
     <fragment
-        android:id="@+id/navigation_home"
-        android:name="com.champion.theo.encyclopedia_dofus.ui.home.HomeFragment"
+        android:id="@+id/navigation_encyclopedia"
+        android:name="com.champion.theo.encyclopedia_dofus.ui.encyclopedia.EncyclopediaFragment"
         android:label="@string/title_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_encyclopedia" />
 
     <fragment
-        android:id="@+id/navigation_archmonster"
-        android:name="com.champion.theo.encyclopedia_dofus.ui.archMonster.ArchMonsterFragment"
-        android:label="@string/archmonster"
-        tools:layout="@layout/fragment_archMonster" />
+        android:id="@+id/navigation_archmonsters"
+        android:name="com.champion.theo.encyclopedia_dofus.ui.archmonsters.ArchmonstersFragment"
+        android:label="@string/title_archmonsters"
+        tools:layout="@layout/fragment_archmonsters" />
 
 </navigation>

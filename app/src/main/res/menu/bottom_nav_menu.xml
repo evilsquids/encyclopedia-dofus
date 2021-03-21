@@ -2,13 +2,13 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/navigation_home"
-        android:icon="@drawable/ic_home_black_24dp"
-        android:title="@string/title_home" />
+        android:id="@+id/navigation_encyclopedia"
+        android:icon="@drawable/ic_icon_bookshelf"
+        android:title="@string/title_encyclopedia" />
 
     <item
-        android:id="@+id/navigation_archmonster"
-        android:icon="@drawable/ic_dashboard_black_24dp"
-        android:title="@string/archmonster" />
+        android:id="@+id/navigation_archmonsters"
+        android:icon="@drawable/ic_icon_dofus"
+        android:title="@string/title_archmonsters" />
 
 </menu>

@@ -1,4 +1,4 @@
-package com.champion.theo.encyclopedia_dofus.ui.archMonster
+package com.champion.theo.encyclopedia_dofus.ui.archmonsters
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -7,7 +7,7 @@ import com.champion.theo.encyclopedia_dofus.models.Monster
 import com.champion.theo.encyclopedia_dofus.repositories.MonsterRepository
 import java.util.concurrent.Executors
 
-class ArchMonsterViewModel : ViewModel() {
+class ArchmonstersViewModel : ViewModel() {
 
     private val repository: MonsterRepository = MonsterRepository.getInstance()
     private val _monsters = MutableLiveData<List<Monster>>()
