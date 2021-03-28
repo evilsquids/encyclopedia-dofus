@@ -9,12 +9,12 @@
         android:id="@+id/navigation_encyclopedia"
         android:name="com.champion.theo.encyclopedia_dofus.ui.encyclopedia.EncyclopediaFragment"
         android:label="@string/title_home"
-        tools:layout="@layout/fragment_encyclopedia" />
+        tools:layout="@layout/encyclopedia_fragment" />
 
     <fragment
         android:id="@+id/navigation_archmonsters"
         android:name="com.champion.theo.encyclopedia_dofus.ui.archmonsters.ArchmonstersFragment"
         android:label="@string/title_archmonsters"
-        tools:layout="@layout/fragment_archmonsters" />
+        tools:layout="@layout/archmonsters_fragment" />
 
 </navigation>

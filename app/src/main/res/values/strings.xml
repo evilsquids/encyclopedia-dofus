@@ -3,4 +3,5 @@
     <string name="title_home">Home</string>
     <string name="title_encyclopedia">Encyclopédie</string>
     <string name="title_archmonsters">Archimonstres</string>
+    <string name="item_list_avatar">class icon</string>
 </resources>
