@@ -3,12 +3,9 @@ package com.champion.theo.encyclopedia_dofus.dal.online
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.champion.theo.encyclopedia_dofus.dal.online.responses.CharacterResponseItem
-import com.champion.theo.encyclopedia_dofus.dal.online.responses.MonsterResponseItem
 import com.champion.theo.encyclopedia_dofus.dal.online.services.RetrofitApiService
 import com.champion.theo.encyclopedia_dofus.dal.utils.toCharacter
-import com.champion.theo.encyclopedia_dofus.dal.utils.toMonster
 import com.champion.theo.encyclopedia_dofus.models.Character
-import com.champion.theo.encyclopedia_dofus.models.Monster
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import okhttp3.Response
@@ -51,7 +48,6 @@ class CharacterOnlineDataSource {
                 val original = chain.request()
                 val originalHttpUrl = original.url
                 val url = originalHttpUrl.newBuilder()
-                        //.addQueryParameter("apiKey", apiKey)
                         .build()
 
                 val requestBuilder = original.newBuilder()
