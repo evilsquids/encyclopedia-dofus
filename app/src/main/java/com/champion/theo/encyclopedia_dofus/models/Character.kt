@@ -2,10 +2,10 @@ package com.champion.theo.encyclopedia_dofus.models
 
 
 data class Character(
-    val ankamaId: Int?,
+    val ankamaId: String?,
     val description: String?,
     val femaleImg: String?,
-    val id: Int?,
+    val id: String?,
     val level: Any?,
     val maleImg: String?,
     val name: String?,
