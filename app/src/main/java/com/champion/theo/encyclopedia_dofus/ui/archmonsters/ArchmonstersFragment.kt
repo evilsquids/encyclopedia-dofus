@@ -86,6 +86,9 @@ class ArchmonstersFragment : Fragment(), ArchmonstersListHandler {
                 Observer<List<Monster>> {
                     if (it != null) {
                         adapter.setMonsters(it)
+                        Log.d("DEBUG", "not null");
+                    } else {
+                        Log.d("DEBUG", "null");
                     }
                 }
         )
