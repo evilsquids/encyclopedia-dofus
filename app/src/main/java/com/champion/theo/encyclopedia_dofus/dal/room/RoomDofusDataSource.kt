@@ -26,7 +26,7 @@ class RoomDofusDataSource(application: Application) {
         get() = _ownedMonsters
 
     fun deleteOwnedMonster(ownedMonster: OwnedMonster) {
-        dao.delete(ownedMonster.toEntity())
+        dao.delete(ownedMonster.ankamaId)
     }
 
     fun createOwnedMonster(ownedMonster: OwnedMonster) {

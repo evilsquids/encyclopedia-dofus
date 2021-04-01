@@ -15,6 +15,6 @@ interface OwnedMonsterDao {
     @Insert
     fun add(monster: OwnedMonsterEntity)
 
-    @Delete
-    fun delete(monster: OwnedMonsterEntity)
+    @Query("DELETE FROM ownedmonster WHERE ankamaId = :ankamaId")
+    fun delete(ankamaId: String)
 }
