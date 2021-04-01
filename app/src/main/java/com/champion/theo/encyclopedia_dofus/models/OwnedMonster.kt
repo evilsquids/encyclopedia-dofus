@@ -7,6 +7,6 @@ class OwnedMonster (
     val ankamaId:String
 ){
     fun toEntity(): OwnedMonsterEntity {
-        return OwnedMonsterEntity(id,ankamaId)
+        return OwnedMonsterEntity(ankamaId)
     }
 }

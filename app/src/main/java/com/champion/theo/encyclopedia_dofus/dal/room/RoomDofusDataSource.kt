@@ -25,8 +25,8 @@ class RoomDofusDataSource(application: Application) {
     val ownedMonsters: LiveData<List<OwnedMonster>>
         get() = _ownedMonsters
 
-    fun deleteOwnedMonster(ownedMonster: OwnedMonster): Int {
-        TODO("Not yet implemented")
+    fun deleteOwnedMonster(ownedMonster: OwnedMonster) {
+        dao.delete(ownedMonster.toEntity())
     }
 
     fun createOwnedMonster(ownedMonster: OwnedMonster) {

@@ -6,7 +6,8 @@ import androidx.room.PrimaryKey
 
 @Entity(tableName = "ownedmonster",indices = arrayOf(Index(value = ["ankamaId"],unique = true)) )
 class OwnedMonsterEntity (
-    @PrimaryKey(autoGenerate = true)
-    val id: Long,
     val ankamaId:String
-)
+) {
+    @PrimaryKey(autoGenerate = true)
+    var id: Long = 0
+}
