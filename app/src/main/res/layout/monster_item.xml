@@ -14,19 +14,18 @@
         android:src="@drawable/ic_icon_loader"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/item_list_name"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/item_list_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:maxWidth="250dp"
         android:maxLines="1"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginStart="50dp"
+        app:layout_constraintStart_toEndOf="@id/item_list_icon"
         tools:text="Classe" />
 
 
