@@ -20,16 +20,28 @@ import com.champion.theo.encyclopedia_dofus.models.Monster
 
 class ArchmonstersFragment : Fragment(), ArchmonstersListHandler {
 
-    private lateinit var binding: ArchmonstersFragmentBinding
-    private lateinit var adapter: ArchmonstersListAdapter
-    private lateinit var archmonstersViewModel: ArchmonstersViewModel
+    /**
+     * Binding
+     */
+    private var _binding: ArchmonstersFragmentBinding? = null;
+    private val binding get() = _binding!!;
+
+    /**
+     * View Model
+     */
+    private lateinit var viewModel: ArchmonstersViewModel
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        viewModel = ViewModelProvider(this).get(ArchmonstersViewModel::class.java)
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = ArchmonstersFragmentBinding.inflate(inflater, container, false)
+        _binding = ArchmonstersFragmentBinding.inflate(inflater, container, false)
         binding.archmonstersList.layoutManager = LinearLayoutManager(context)
         binding.archmonstersList.addItemDecoration(
             DividerItemDecoration(
@@ -38,25 +50,7 @@ class ArchmonstersFragment : Fragment(), ArchmonstersListHandler {
             )
         )
 
-        archmonstersViewModel = ViewModelProvider(this).get(ArchmonstersViewModel::class.java)
-        archmonstersViewModel.monsters.observe(
-            viewLifecycleOwner,
-            Observer {
-                binding.textArchmonsters.text = "Liste Archimonstres"
-                if (it != null) {
-                    Log.d("monsters", it.toString())
-                }
-            }
-        )
-
-        /*
-        archmonstersViewModel.ownedMonsters.observe(
-            viewLifecycleOwner,
-            Observer<List<OwnedMonster>> { t ->
-                Log.d("ownedMonster", t.toString())
-            }
-        )
-        */
+        binding.textArchmonsters.text = "Liste Archimonstres"
 
         return binding.root
     }
@@ -73,27 +67,27 @@ class ArchmonstersFragment : Fragment(), ArchmonstersListHandler {
             .setMessage("Êtes-vous sûr de vouloir ajouter ce monstre à vos favoris ?")
             .setPositiveButton(
                 "Ajouter",
-                DialogInterface.OnClickListener { dialog, which -> addMonster(monster, adapter) }
+                DialogInterface.OnClickListener { dialog, which -> addMonster(monster) }
             )
             .setNegativeButton("Annuler", null)
             .show()
     }
 
-    fun addMonster(monster: Monster, adapter: ArchmonstersListAdapter) {
-        TODO("Not yet implemented")
+    fun addMonster(monster: Monster) {
+
     }
 
     private fun setData() {
-        archmonstersViewModel.monsters.observe(
-            viewLifecycleOwner,
-            Observer {
-                binding.textArchmonsters.text = "Liste Archimonstres"
-                if (it != null) {
-                    Log.d("monsters", it.toString())
-                    val adapter = ArchmonstersListAdapter(it, this)
-                    binding.archmonstersList.adapter = adapter
+        val adapter = ArchmonstersListAdapter(this)
+        binding.archmonstersList.adapter = adapter
+
+        viewModel.monsters.observe(
+                viewLifecycleOwner,
+                Observer<List<Monster>> {
+                    if (it != null) {
+                        adapter.setMonsters(it)
+                    }
                 }
-            }
         )
     }
 }

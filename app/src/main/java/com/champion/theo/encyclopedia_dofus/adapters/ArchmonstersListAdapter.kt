@@ -8,16 +8,19 @@ import com.champion.theo.encyclopedia_dofus.databinding.MonsterItemBinding
 import com.champion.theo.encyclopedia_dofus.models.Monster
 
 class ArchmonstersListAdapter(
-    items: List<Monster>,
     val callback: ArchmonstersListHandler
 ) : RecyclerView.Adapter<ArchmonstersListAdapter.ViewHolder>() {
-    private val monsters: List<Monster> = items
+    /**
+     * Monster collection
+     */
+    private var monsters: List<Monster> = ArrayList<Monster>()
 
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
     ): ViewHolder {
         val binding: MonsterItemBinding = MonsterItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+
         return ViewHolder(binding)
     }
 
@@ -28,17 +31,27 @@ class ArchmonstersListAdapter(
             callback.onAddMonster(monster)
         }
         */
-        holder.binding.itemListName.text = monster.name
-        val context = holder.binding.root.context
-        Glide.with(context)
-            .load(monster.imgUrl)
-            .into(holder.binding.itemListIcon)
+        fillViewHolderData(holder, position)
     }
 
     override fun getItemCount(): Int {
         var itemCount = 0
         itemCount = monsters.size
         return itemCount
+    }
+
+    private fun fillViewHolderData(holder: ViewHolder, position: Int) {
+        val archMonster: Monster = monsters[position]
+        holder.binding.itemListName.text = archMonster.name
+        val context = holder.binding.root.context
+        Glide.with(context)
+                .load(archMonster.imgUrl)
+                .into(holder.binding.itemListIcon)
+    }
+
+    fun setMonsters(monsters: List<Monster>) {
+        this.monsters = monsters
+        notifyDataSetChanged()
     }
 
     class ViewHolder(val binding: MonsterItemBinding) :
